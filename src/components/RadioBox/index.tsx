@@ -1,20 +1,22 @@
 import './styles.scss';
 
-export const RadioBox = () => {
+interface Props {
+  htmlFor: string;
+  value: string;
+  name: string;
+  children: React.ReactNode;
+}
+
+export const RadioBox: React.FC<Props> = ({
+  htmlFor,
+  value,
+  name,
+  children,
+}) => {
   return (
-    <>
-      <div className="radio-box">
-        <label htmlFor="option1" className="radio-label"></label>
-        <span className="radio-span">Opción 1</span>
-        <div className="radio-dot"></div>
-        <input
-          id="option1"
-          type="radio"
-          value="option1"
-          name="oneQuestion"
-          className="radio-input"
-        />
-      </div>
-    </>
+    <label className="radio-box" htmlFor={htmlFor}>
+      {children}
+      <input id={htmlFor} type="radio" value={value} name={name} />
+    </label>
   );
 };
