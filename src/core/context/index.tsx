@@ -1,47 +1,36 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, createContext, useState } from 'react';
 
-interface Context {
+interface FormState {
   questionOne: string;
-  setQuestionOne: (value: string) => void;
   questionTwo: string[];
-  setQuestionTwo: (value: string[]) => void;
   phone: string;
-  setPhone: (value: string) => void;
 }
 
-export const FormContext = React.createContext<Context>({
-  questionOne: '',
-  setQuestionOne: () => {},
-  questionTwo: [],
-  setQuestionTwo: () => {},
-  phone: '',
-  setPhone: () => {},
-});
+export interface FormContextProps {
+  formState: FormState;
+  updateField: (field: string, value: string | string[]) => void;
+}
 
-export interface FormContextProvider {
+export const FormContext = createContext<FormContextProps | undefined>(undefined);
+
+export interface FormProviderProps {
   children: ReactNode;
 }
 
-export const FormContextProvider: React.FC<FormContextProvider> = ({
+export const FormContextProvider: React.FC<FormProviderProps> = ({
   children,
 }) => {
-  const [questionOne, setQuestionOne] = useState<string>('');
+  const [formState, setFormState] = useState<FormState>({
+    questionOne: '',
+    questionTwo: [],
+    phone: '',
+  });
 
-  const [questionTwo, setQuestionTwo] = useState<string[]>([]);
-
-  const [phone, setPhone] = useState<string>('');
-
+  const updateField = (field: string, value: string | string[]) => {
+    setFormState({ ...formState, [field]: value });
+  };
   return (
-    <FormContext.Provider
-      value={{
-        questionOne,
-        setQuestionOne,
-        questionTwo,
-        setQuestionTwo,
-        phone,
-        setPhone,
-      }}
-    >
+    <FormContext.Provider value={{ formState, updateField }}>
       {children}
     </FormContext.Provider>
   );
