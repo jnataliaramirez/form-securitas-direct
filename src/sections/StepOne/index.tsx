@@ -1,14 +1,14 @@
 import { Information } from '../../components/Information';
 import { RadioBox } from '../../components/RadioBox';
 import { Subtitle } from '../../components/Subtitle';
-import './styles.scss';
+
 
 export const StepOne = () => {
   return (
-    <section className="step-one">
+    <section className="step">
       <Subtitle>Pregunta 1</Subtitle>
 
-      <div className='step-one__container'>
+      <div className='step__container'>
         <RadioBox htmlFor="option1" value="option1" name="questionOne">
           Opcion 1
         </RadioBox>
@@ -20,6 +20,7 @@ export const StepOne = () => {
         </RadioBox>
       </div>
       
+      <Information />
     </section>
   );
 };
