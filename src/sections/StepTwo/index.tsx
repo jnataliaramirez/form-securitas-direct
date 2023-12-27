@@ -1,3 +1,4 @@
+import { Button } from '../../components/Button';
 import { CheckBox } from '../../components/CheckBox';
 import { Information } from '../../components/Information';
 import { Subtitle } from '../../components/Subtitle';
@@ -25,6 +26,8 @@ export const StepTwo = () => {
       </div>
 
       <Information />
+
+      <Button></Button>
     </section>
   );
 };

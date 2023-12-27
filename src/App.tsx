@@ -1,7 +1,7 @@
 // import { useState } from 'react';
 
-import { Button } from './components/Button';
 import { Header } from './components/Header';
+import { StepEnd } from './sections/StepEnd';
 import { StepOne } from './sections/StepOne';
 import { StepTwo } from './sections/StepTwo';
 
@@ -13,7 +13,7 @@ function App() {
       <Header />
       <StepOne />
       <StepTwo />
-      <Button></Button>
+      <StepEnd />
     </div>
   );
 }
