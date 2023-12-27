@@ -7,6 +7,7 @@ import { StepTwo } from './sections/StepTwo';
 interface FormData {
   questionOne: string;
   questionTwo: string[];
+  phone: string;
 }
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   const [formData, setFormData] = useState<FormData>({
     questionOne: '',
     questionTwo: [],
+    phone: "",
   });
 
   // Manejador de cambios para preguntas de opción única
