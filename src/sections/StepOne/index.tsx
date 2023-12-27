@@ -1,11 +1,14 @@
-// import React from 'react';
 import { Information } from '../../components/Information';
 import { RadioBox } from '../../components/RadioBox';
 import { Subtitle } from '../../components/Subtitle';
-// import { FormContext } from '../../core/context';
+import { useFormContext } from '../../core/context/hook.context';
 
 export const StepOne = () => {
-  // const formContext = React.useContext(FormContext);
+  const { updateField } = useFormContext();
+
+  const handleInputChange = (name: string, value: string) => {
+    updateField(name, value);
+  };
 
   return (
     <fieldset className="step">
@@ -14,28 +17,25 @@ export const StepOne = () => {
       <div className="step__container">
         <RadioBox
           htmlFor="option1"
-          value="option1"
           name="questionOne"
-          // checked={formContext.questionOne === 'option1'}
-          // onChange={() => handleRadioChange('questionOne', 'option1')}
+          value="option1"
+          onInputChange={handleInputChange}
         >
           Opcion 1
         </RadioBox>
         <RadioBox
           htmlFor="option2"
-          value="option2"
           name="questionOne"
-          // checked={formData.questionOne === 'option2'}
-          // onChange={() => handleRadioChange('questionOne', 'option2')}
+          value="option2"
+          onInputChange={handleInputChange}
         >
           Opcion 2
         </RadioBox>
         <RadioBox
           htmlFor="option3"
-          value="option3"
           name="questionOne"
-          // checked={formData.questionOne === 'option3'}
-          // // onChange={() => handleRadioChange('questionOne', 'option3')}
+          value="option3"
+          onInputChange={handleInputChange}
         >
           Opcion 3
         </RadioBox>
