@@ -1,8 +1,12 @@
+// import React from 'react';
 import { Information } from '../../components/Information';
 import { RadioBox } from '../../components/RadioBox';
 import { Subtitle } from '../../components/Subtitle';
+// import { FormContext } from '../../core/context';
 
 export const StepOne = () => {
+  // const formContext = React.useContext(FormContext);
+
   return (
     <fieldset className="step">
       <Subtitle>Pregunta 1</Subtitle>
@@ -12,7 +16,7 @@ export const StepOne = () => {
           htmlFor="option1"
           value="option1"
           name="questionOne"
-          // checked={formData.questionOne === 'option1'}
+          // checked={formContext.questionOne === 'option1'}
           // onChange={() => handleRadioChange('questionOne', 'option1')}
         >
           Opcion 1

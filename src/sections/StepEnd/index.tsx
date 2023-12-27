@@ -5,10 +5,11 @@ import './styles.scss';
 
 export const StepEnd = () => {
 
+
   return (
     <fieldset className="stepEnd">
       <Subtitle>Guarda tus respuestas</Subtitle>
-      <InputTel button={<SubmitButton />} />
+      <InputTel  button={<SubmitButton />} />
     </fieldset>
   );
 };

@@ -2,21 +2,27 @@ import React, { ReactNode, useState } from 'react';
 
 interface Context {
   questionOne: string;
+  setQuestionOne: (value: string) => void;
   questionTwo: string[];
+  setQuestionTwo: (value: string[]) => void;
   phone: string;
+  setPhone: (value: string) => void;
 }
 
-export const MyContext = React.createContext<Context>({
+export const FormContext = React.createContext<Context>({
   questionOne: '',
+  setQuestionOne: () => {},
   questionTwo: [],
+  setQuestionTwo: () => {},
   phone: '',
+  setPhone: () => {},
 });
 
-export interface MyContextProviderProps {
+export interface FormContextProvider {
   children: ReactNode;
 }
 
-export const MyContextProvider: React.FC<MyContextProviderProps> = ({
+export const FormContextProvider: React.FC<FormContextProvider> = ({
   children,
 }) => {
   const [questionOne, setQuestionOne] = useState<string>('');
@@ -26,14 +32,17 @@ export const MyContextProvider: React.FC<MyContextProviderProps> = ({
   const [phone, setPhone] = useState<string>('');
 
   return (
-    <MyContext.Provider
+    <FormContext.Provider
       value={{
-        questionOne: questionOne,
-        questionTwo: questionTwo,
-        phone: phone,
+        questionOne,
+        setQuestionOne,
+        questionTwo,
+        setQuestionTwo,
+        phone,
+        setPhone,
       }}
     >
       {children}
-    </MyContext.Provider>
+    </FormContext.Provider>
   );
 };
