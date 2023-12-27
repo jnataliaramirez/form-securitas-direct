@@ -9,12 +9,12 @@ export const InputTel: React.FC<Props> = ({ button }) => {
     <>
       <div className="input__wrapper">
         <input
+          required
           type="tel"
           id="phone"
           name="phone"
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           placeholder="Teléfono"
-          required
           className="input"
         />
         {button}

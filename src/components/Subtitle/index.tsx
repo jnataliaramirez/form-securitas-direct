@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const Subtitle: React.FC<Props> = ({ children }) => (
-  <h2 className="subtitle">{children}</h2>
+  <legend className="subtitle">{children}</legend>
 );

@@ -6,9 +6,9 @@ import './styles.scss';
 export const StepEnd = () => {
 
   return (
-    <section className="stepEnd">
+    <fieldset className="stepEnd">
       <Subtitle>Guarda tus respuestas</Subtitle>
       <InputTel button={<SubmitButton />} />
-    </section>
+    </fieldset>
   );
 };

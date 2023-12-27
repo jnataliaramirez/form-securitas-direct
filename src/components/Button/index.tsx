@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const Button: React.FC<Props> = ({ children }) => {
-  return <button className="button"> {children} </button>;
+  return <button disabled className="button"> {children} </button>;
 };

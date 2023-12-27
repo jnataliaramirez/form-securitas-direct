@@ -6,7 +6,7 @@ import { Text } from '../../components/Text';
 
 export const StepTwo = () => {
   return (
-    <section className="step">
+    <fieldset className="step">
       <Subtitle>Pregunta 2</Subtitle>
       <Text> Puedes elegir varias opciones </Text>
 
@@ -28,6 +28,6 @@ export const StepTwo = () => {
       <Information />
 
       <Button>Continuar</Button>
-    </section>
+    </fieldset>
   );
 };

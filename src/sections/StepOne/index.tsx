@@ -5,7 +5,7 @@ import { Subtitle } from '../../components/Subtitle';
 
 export const StepOne = () => {
   return (
-    <section className="step">
+    <fieldset className="step">
       <Subtitle>Pregunta 1</Subtitle>
 
       <div className='step__container'>
@@ -21,6 +21,6 @@ export const StepOne = () => {
       </div>
       
       <Information />
-    </section>
+    </fieldset>
   );
 };

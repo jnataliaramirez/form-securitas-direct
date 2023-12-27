@@ -10,10 +10,12 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Header/>
-      <StepOne />
-      <StepTwo />
-      <StepEnd />
+      <Header />
+      <form action="" method="" >
+        <StepOne />
+        <StepTwo />
+        <StepEnd />
+      </form>
     </div>
   );
 }
