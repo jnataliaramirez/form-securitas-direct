@@ -14,7 +14,7 @@ export const RadioBox: React.FC<Props> = ({
   children,
 }) => {
   return (
-    <label className="radio-box" htmlFor={htmlFor}>
+    <label className="box" htmlFor={htmlFor}>
       {children}
       <input id={htmlFor} type="radio" value={value} name={name} />
     </label>

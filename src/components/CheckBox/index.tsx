@@ -14,7 +14,7 @@ export const CheckBox: React.FC<Props> = ({
   children,
 }) => {
   return (
-    <label className="radio-box" htmlFor={htmlFor}>
+    <label className="box" htmlFor={htmlFor}>
       {children}
       <input id={htmlFor} type="checkbox" value={value} name={name} />
     </label>
