@@ -3,8 +3,15 @@ import { CheckBox } from '../../components/CheckBox';
 import { Information } from '../../components/Information';
 import { Subtitle } from '../../components/Subtitle';
 import { Text } from '../../components/Text';
+import { useFormContext } from '../../core/context/hook.context';
 
 export const StepTwo = () => {
+  const { updateField } = useFormContext();
+
+  const handleInputChange = (name: string, value: string) => {
+    updateField(name, value);
+  };
+
   return (
     <fieldset className="step">
       <Subtitle>Pregunta 2</Subtitle>
@@ -15,8 +22,7 @@ export const StepTwo = () => {
           htmlFor="optionA"
           value="optionA"
           name="questionTwo"
-          // checked={formData.questionTwo.includes('optionA')}
-          // onChange={() => handleCheckboxChange('questionTwo', 'optionA')}
+          onInputChange={handleInputChange}
         >
           Opcion 1
         </CheckBox>
@@ -24,8 +30,7 @@ export const StepTwo = () => {
           htmlFor="optionB"
           value="optionB"
           name="questionTwo"
-          // checked={formData.questionTwo.includes('optionB')}
-          // onChange={() => handleCheckboxChange('questionTwo', 'optionB')}
+          onInputChange={handleInputChange}
         >
           Opcion 2
         </CheckBox>
@@ -33,8 +38,7 @@ export const StepTwo = () => {
           htmlFor="optionC"
           value="optionC"
           name="questionTwo"
-          // checked={formData.questionTwo.includes('optionC')}
-          // onChange={() => handleCheckboxChange('questionTwo', 'optionC')}
+          onInputChange={handleInputChange}
         >
           Opcion 3
         </CheckBox>
@@ -42,8 +46,7 @@ export const StepTwo = () => {
           htmlFor="optionD"
           value="optionD"
           name="questionTwo"
-          // checked={formData.questionTwo.includes('optionD')}
-          // onChange={() => handleCheckboxChange('questionTwo', 'optionD')}
+          onInputChange={handleInputChange}
         >
           Opcion 4
         </CheckBox>
