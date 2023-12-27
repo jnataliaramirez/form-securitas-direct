@@ -4,7 +4,7 @@ interface Props {
   htmlFor: string;
   value: string;
   name: string;
-  onInputChange: (field: string, value: string) => void;
+  onInputChange: (field: string, value: string, checked: boolean) => void;
   children: React.ReactNode;
 }
 
@@ -16,8 +16,8 @@ export const CheckBox: React.FC<Props> = ({
   onInputChange,
 }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    onInputChange(name, value);
+    const { name, value, checked } = e.target;
+    onInputChange(name, value, checked);
   };
 
   return (

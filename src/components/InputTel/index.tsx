@@ -1,3 +1,4 @@
+import { useFormContext } from '../../core/context/hook.context';
 import './styles.scss';
 
 interface Props {
@@ -5,6 +6,13 @@ interface Props {
 }
 
 export const InputTel: React.FC<Props> = ({ button }) => {
+
+  const { formState, updateField } = useFormContext();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    updateField(name, value);
+  };
   return (
     <>
       <div className="input__wrapper">
@@ -13,7 +21,8 @@ export const InputTel: React.FC<Props> = ({ button }) => {
           type="tel"
           id="phone"
           name="phone"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          value={formState.phone}
+          onChange={handleInputChange}
           placeholder="Teléfono"
           className="input"
         />

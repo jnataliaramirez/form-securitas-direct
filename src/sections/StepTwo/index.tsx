@@ -6,10 +6,14 @@ import { Text } from '../../components/Text';
 import { useFormContext } from '../../core/context/hook.context';
 
 export const StepTwo = () => {
-  const { updateField } = useFormContext();
+  const { formState, updateField } = useFormContext();
+  
+  const handleInputChange = (name: string, value: string, checked: boolean) => {
+    const updatedValues = checked
+    ? [...formState.questionTwo, value]
+    : (formState.questionTwo as string[]).filter((item) => item !== value);
 
-  const handleInputChange = (name: string, value: string) => {
-    updateField(name, value);
+    updateField(name, updatedValues);
   };
 
   return (

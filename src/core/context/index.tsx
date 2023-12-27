@@ -11,7 +11,9 @@ export interface FormContextProps {
   updateField: (field: string, value: string | string[]) => void;
 }
 
-export const FormContext = createContext<FormContextProps | undefined>(undefined);
+export const FormContext = createContext<FormContextProps | undefined>(
+  undefined
+);
 
 export interface FormProviderProps {
   children: ReactNode;
