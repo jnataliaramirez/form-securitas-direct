@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 
-import { Header } from './components/Header';
+import { Header } from './sections/Header';
 import { StepEnd } from './sections/StepEnd';
 import { StepOne } from './sections/StepOne';
 import { StepTwo } from './sections/StepTwo';
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Header />
+      <Header/>
       <StepOne />
       <StepTwo />
       <StepEnd />

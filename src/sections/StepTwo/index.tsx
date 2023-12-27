@@ -27,7 +27,7 @@ export const StepTwo = () => {
 
       <Information />
 
-      <Button></Button>
+      <Button>Continuar</Button>
     </section>
   );
 };
