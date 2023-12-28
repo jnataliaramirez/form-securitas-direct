@@ -24,8 +24,18 @@ function App() {
         {step === 1 && <Header onNext={handleNext} />}
         <FormContextProvider>
           <form action="" method="">
-            {step === 2 && <StepOne onNext={handleNext} />}
-            {step === 3 && <StepTwo onNext={handleNext} />}
+            {step === 2 && (
+              <>
+                <Header miniStep />
+                <StepOne onNext={handleNext} />
+              </>
+            )}
+            {step === 3 && (
+              <>
+                <StepOne miniStep />
+                <StepTwo onNext={handleNext} />
+              </>
+            )}
             {step === 4 && <StepEnd />}
           </form>
         </FormContextProvider>

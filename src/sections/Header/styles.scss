@@ -1,5 +1,5 @@
 .header {
-  width: auto;
+  width: 100vw;
   padding: 16px 20px;
   background-color: $main-color;
   border-radius: 16px;
@@ -10,6 +10,10 @@
     justify-content: center;
     align-items: center;
     height: 85vh;
+
+    &.true {
+      height: auto;
+    }
   }
 
   &__title {

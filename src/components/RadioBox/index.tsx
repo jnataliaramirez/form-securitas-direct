@@ -7,6 +7,7 @@ interface Props {
   name: string;
   onInputChange: (field: string, value: string) => void;
   children: React.ReactNode;
+  checked?: boolean;
 }
 
 export const RadioBox: React.FC<Props> = ({
@@ -15,6 +16,7 @@ export const RadioBox: React.FC<Props> = ({
   name,
   children,
   onInputChange,
+  checked,
 }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -30,6 +32,7 @@ export const RadioBox: React.FC<Props> = ({
         value={value}
         name={name}
         onChange={handleInputChange}
+        checked={checked}
       />
     </label>
   );

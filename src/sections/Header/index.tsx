@@ -1,15 +1,16 @@
 import './styles.scss';
 
 interface Props {
-  onNext: () => void;
+  miniStep?: boolean;
+  onNext?: () => void;
 }
 
-export const Header: React.FC<Props> = ({ onNext }) => {
+export const Header: React.FC<Props> = ({ onNext, miniStep }) => {
   const handleNext = () => {
-    onNext();
+    onNext?.();
   };
   return (
-    <div onClick={handleNext} className="header__wrapper">
+    <div onClick={handleNext} className={`header__wrapper ${miniStep}`}>
       <header className="header">
         <h1 className="header__title">
           Oferta del mes
