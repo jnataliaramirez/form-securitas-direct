@@ -6,7 +6,13 @@
   border-radius: 48px;
   color: $white-color;
   background: $main-color-light;
-  // background: $main-color-dark;
-  // background: $main-color;
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+.change-color {
+  background: $main-color;
+}
+
+.dark-color {
+  background: $main-color-dark;
 }

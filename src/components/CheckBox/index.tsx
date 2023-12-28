@@ -6,6 +6,7 @@ interface Props {
   name: string;
   onInputChange: (field: string, value: string, checked: boolean) => void;
   children: React.ReactNode;
+  checked?: boolean;
 }
 
 export const CheckBox: React.FC<Props> = ({
@@ -14,6 +15,7 @@ export const CheckBox: React.FC<Props> = ({
   name,
   children,
   onInputChange,
+  checked,
 }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, checked } = e.target;
@@ -29,6 +31,7 @@ export const CheckBox: React.FC<Props> = ({
         value={value}
         name={name}
         onChange={handleInputChange}
+        checked={checked}
       />
     </label>
   );

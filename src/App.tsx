@@ -36,7 +36,12 @@ function App() {
                 <StepTwo onNext={handleNext} />
               </>
             )}
-            {step === 4 && <StepEnd />}
+            {step === 4 && (
+              <>
+                <StepTwo onNext={handleNext} miniStep/>
+                <StepEnd />
+              </>
+            )}
           </form>
         </FormContextProvider>
       </div>
