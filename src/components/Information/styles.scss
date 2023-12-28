@@ -13,50 +13,39 @@
     justify-content: center;
   }
 
-  div {
+  &__images {
     position: relative;
+
+    &--bulb-off {
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      animation: bulb-off 1s linear forwards;
+    }
+
+    &--bulb-on {
+      width: 32px;
+      height: 32px;
+      animation: bulb-on 1s linear forwards;
+    }
   }
 
-  .bulb-off {
-    width: 32px;
-    height: 32px;
-    position: absolute;
-  }
-
-  .bulb-on {
-    width: 32px;
-    height: 32px;
-
-    animation-name: bulb;
-    animation-duration: 0.8s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-  }
-
-  .texto {
+  &__text {
+    margin-left: 8px;
     font-size: 14px;
     font-weight: 700;
-    color: #000;
-    height: 32px;
-    padding-left: 40px;
-    // visibility: visible;
-    // z-index: -1;
+    line-height: normal;
+    color: $black-color;
   }
 
 }
 
 .animation-active {
-  animation-name: box-background;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  animation: box-background 0.5s linear forwards;
 }
 
-.texto-active {
-  animation-name: texto;
-  animation-duration: 0.8s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+.text-active {
+  animation: text 0.8s linear forwards;
 }
 
 @keyframes box-background {
@@ -64,23 +53,19 @@
     width: 48px;
     height: 64px;
     align-items: center;
-    // opacity: 0;
   }
 
   to {
     align-items: flex-start;
     height: 100%;
     width: 100%;
-    // opacity: 1;
   }
 }
 
-@keyframes texto {
+@keyframes text {
   0% {
-    opacity: 0;
-    // visibility: hidden;
-    // z-index: -1;
     position: fixed;
+    opacity: 0;
     z-index: -5;
 
   }
@@ -88,36 +73,40 @@
   99% {
     position: fixed;
     opacity: 0;
-    // display: none;
     z-index: -5;
-    // visibility: hidden;
-
+    height: 100%;
   }
 
   100% {
     opacity: 1;
     height: 100%;
-    // visibility: visible;
-
   }
 }
 
-@keyframes bulb {
+@keyframes bulb-on {
   0% {
     opacity: 0;
-
-
   }
 
-  99% {
-
+  79% {
     opacity: 0;
-
   }
 
   100% {
     opacity: 1;
+  }
+}
 
+@keyframes bulb-off {
+  0% {
+    opacity: 1;
+  }
 
+  79% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

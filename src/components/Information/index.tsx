@@ -12,11 +12,11 @@ export const Information = () => {
         <article
           className={`information ${animationActive && 'animation-active'}`}
         >
-          <div>
-            <img src={bulb} alt="Bombilla apagada" className="bulb-off" />
-            <img src={bulbOn} alt="Bombilla encendida" className="bulb-on" />
+          <div className='information__images'>
+            <img src={bulb} alt="Bombilla apagada" className="information__images--bulb-off" />
+            <img src={bulbOn} alt="Bombilla encendida" className="information__images--bulb-on" />
           </div>
-          <p className={`texto ${animationActive && 'texto-active'}`}>
+          <p className={`information__text ${animationActive && 'text-active'}`}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
             cursus diam in sagittis rutrum.
           </p>
