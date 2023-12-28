@@ -3,7 +3,7 @@ import { SubmitButton } from '../../components/SubmitButton';
 import { Subtitle } from '../../components/Subtitle';
 import './styles.scss';
 
-export const StepEnd = () => {
+export const StepEnd: React.FC = () => {
   return (
     <fieldset className="stepEnd">
       <Subtitle>Guarda tus respuestas</Subtitle>

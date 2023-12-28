@@ -5,13 +5,17 @@ import { Subtitle } from '../../components/Subtitle';
 import { Text } from '../../components/Text';
 import { useFormContext } from '../../core/context/hook.context';
 
-export const StepTwo = () => {
+interface Props {
+  onNext: () => void;
+}
+
+export const StepTwo: React.FC<Props> = ({ onNext }) => {
   const { formState, updateField } = useFormContext();
-  
+
   const handleInputChange = (name: string, value: string, checked: boolean) => {
     const updatedValues = checked
-    ? [...formState.questionTwo, value]
-    : (formState.questionTwo as string[]).filter((item) => item !== value);
+      ? [...formState.questionTwo, value]
+      : (formState.questionTwo as string[]).filter((item) => item !== value);
 
     updateField(name, updatedValues);
   };
@@ -58,7 +62,7 @@ export const StepTwo = () => {
 
       <Information />
 
-      <Button>Continuar</Button>
+      <Button onNext={onNext}>Continuar</Button>
     </fieldset>
   );
 };

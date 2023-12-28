@@ -3,11 +3,16 @@ import { RadioBox } from '../../components/RadioBox';
 import { Subtitle } from '../../components/Subtitle';
 import { useFormContext } from '../../core/context/hook.context';
 
-export const StepOne = () => {
+interface Props {
+  onNext: () => void;
+}
+
+export const StepOne: React.FC<Props> = ({ onNext }) => {
   const { updateField } = useFormContext();
 
   const handleInputChange = (name: string, value: string) => {
     updateField(name, value);
+    onNext();
   };
 
   return (
