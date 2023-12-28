@@ -19,6 +19,7 @@ export const InputTel: React.FC<Props> = ({ button }) => {
         <input
           required
           type="tel"
+          pattern="[0-9]*"
           id="phone"
           name="phone"
           value={formState.phone}

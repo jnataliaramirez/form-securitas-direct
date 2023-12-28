@@ -32,6 +32,7 @@ export const StepOne: React.FC<Props> = ({ onNext, miniStep }) => {
 
   const handleInputChange = (name: string, value: string) => {
     updateField(name, value);
+    
     onNext?.();
   };
 

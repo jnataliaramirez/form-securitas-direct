@@ -1,67 +1,123 @@
 .information {
   display: flex;
+  align-items: center;
+  width: 48px;
+  height: 64px;
+  padding: 16px 8px;
+  border-radius: 16px;
+  background: $secundary-color;
+  position: relative;
 
-  article {
+  &__wrapper {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    width: 48px;
-    padding: 16px 8px;
-    border-radius: 16px;
-    background: $secundary-color;
   }
 
-  img {
+  div {
+    position: relative;
+  }
+
+  .bulb-off {
     width: 32px;
     height: 32px;
+    position: absolute;
   }
-}
 
-.information-open-off {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  width: auto;
-  padding: 16px 8px;
-  border-radius: 16px;
-  background: $secundary-color;
-}
-
-.information-open-on {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  width: auto;
-  padding: 16px 8px;
-  border-radius: 16px;
-  background: $secundary-color;
-
-  p {
-    opacity: 0;
-  }
-}
-
-
-
-.information-on {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 8px;
-  width: auto;
-  padding: 16px 8px;
-  border-radius: 16px;
-  background: $secundary-color;
-
-  img {
+  .bulb-on {
     width: 32px;
     height: 32px;
+
+    animation-name: bulb;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
   }
 
-  p {
-    color: #000;
+  .texto {
     font-size: 14px;
     font-weight: 700;
-    line-height: normal;
+    color: #000;
+    height: 32px;
+    padding-left: 40px;
+    // visibility: visible;
+    // z-index: -1;
+  }
+
+}
+
+.animation-active {
+  animation-name: box-background;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.texto-active {
+  animation-name: texto;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes box-background {
+  from {
+    width: 48px;
+    height: 64px;
+    align-items: center;
+    // opacity: 0;
+  }
+
+  to {
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    // opacity: 1;
+  }
+}
+
+@keyframes texto {
+  0% {
+    opacity: 0;
+    // visibility: hidden;
+    // z-index: -1;
+    position: fixed;
+    z-index: -5;
+
+  }
+
+  99% {
+    position: fixed;
+    opacity: 0;
+    // display: none;
+    z-index: -5;
+    // visibility: hidden;
+
+  }
+
+  100% {
+    opacity: 1;
+    height: 100%;
+    // visibility: visible;
+
+  }
+}
+
+@keyframes bulb {
+  0% {
+    opacity: 0;
+
+
+  }
+
+  99% {
+
+    opacity: 0;
+
+  }
+
+  100% {
+    opacity: 1;
+
+
   }
 }
