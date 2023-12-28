@@ -1,10 +1,16 @@
 .header {
   width: auto;
-  margin: 16px 0px 16px;
   padding: 16px 20px;
   background-color: $main-color;
   border-radius: 16px;
   color: $white-color;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+  }
 
   &__title {
     font-size: 20px;

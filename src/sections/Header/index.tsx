@@ -9,12 +9,14 @@ export const Header: React.FC<Props> = ({ onNext }) => {
     onNext();
   };
   return (
-    <header onClick={handleNext} className="header">
-      <h1 className="header__title">
-        Oferta del mes
-        <span className="header__title--br"></span>
-        <span className="header__title--subtitle">Ahorra un 50%</span>
-      </h1>
-    </header>
+    <div onClick={handleNext} className="header__wrapper">
+      <header className="header">
+        <h1 className="header__title">
+          Oferta del mes
+          <span className="header__title--br"></span>
+          <span className="header__title--subtitle">Ahorra un 50%</span>
+        </h1>
+      </header>
+    </div>
   );
 };
