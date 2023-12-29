@@ -36,7 +36,7 @@
     font-weight: 700;
     line-height: normal;
     color: $black-color;
-    visibility: visible;
+    visibility: hidden;
   }
 
 }
@@ -69,19 +69,21 @@
     opacity: 0;
     z-index: -5;
     visibility: hidden;
-
+    
   }
-
+  
   99% {
     position: fixed;
     opacity: 0;
     z-index: -5;
     height: 100%;
+    visibility: visible;
   }
-
+  
   100% {
     opacity: 1;
     height: 100%;
+    visibility: visible;
   }
 }
 
