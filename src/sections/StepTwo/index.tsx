@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../../components/Button';
 import { CheckBox } from '../../components/CheckBox';
 import { Information } from '../../components/Information';
@@ -13,6 +13,22 @@ interface Props {
 
 export const StepTwo: React.FC<Props> = ({ onNext, miniStep }) => {
   const { formState, updateField } = useFormContext();
+
+  const [animationActive, setAnimationActive] = useState<boolean>(false);
+
+  const [changeCheckbox, setChangeCheckbox] = useState<string>(
+    formState.questionOne
+  );
+
+  useEffect(() => {
+    setChangeCheckbox(formState.questionOne);
+  }, [formState.questionOne]);
+
+  useEffect(() => {
+    if (changeCheckbox) {
+      setAnimationActive(true);
+    }
+  }, [changeCheckbox]);
 
   const [isAnyCheckboxChecked, setIsAnyCheckboxChecked] =
     useState<boolean>(false);
@@ -103,10 +119,12 @@ export const StepTwo: React.FC<Props> = ({ onNext, miniStep }) => {
           </div>
         </>
       ) : (
-        <>{miniStepShow()}</>
-      )}
+        <>
+          {miniStepShow()}
 
-      <Information />
+          <Information animationActive={animationActive}  />
+        </>
+      )}
 
       {!miniStep && (
         <>
