@@ -12,10 +12,11 @@ Este proyecto utiliza tecnologías modernas y buenas prácticas, incluyendo:
 
 ## 🚀 Características Adicionales
 
-- **Animaciones:** El proyecto incluye animaciones suaves para mejorar la experiencia del usuario.
 - **Formulario Multistep:** Implementa un formulario dividido en pasos para una navegación sencilla.
+- **Context:** Utiliza el Context API de React para gestionar el estado de la aplicación de manera eficiente.
 - **Hooks Personalizados:** Se han utilizado hooks personalizados para una lógica de componente más modular.
 - **Hooks de React:** Además, se aprovechan los hooks proporcionados por React para una gestión de estado eficiente.
+- **Animaciones:** El proyecto incluye animaciones suaves para mejorar la experiencia del usuario.
 
 ## 🚀 Inicio Rápido
 
