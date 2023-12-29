@@ -10,8 +10,7 @@ export const Header: React.FC<Props> = ({ onNext, miniStep }) => {
     onNext?.();
   };
   return (
-    <div onClick={handleNext} 
-    className={`header__wrapper ${miniStep}`}>
+    <div onClick={handleNext} className={`header__wrapper ${miniStep}`}>
       <header className="header">
         <h1 className="header__title">
           Oferta del mes

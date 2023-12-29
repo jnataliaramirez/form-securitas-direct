@@ -38,7 +38,7 @@ function App() {
             )}
             {step === 4 && (
               <>
-                <StepTwo onNext={handleNext} miniStep/>
+                <StepTwo onNext={handleNext} miniStep />
                 <StepEnd />
               </>
             )}

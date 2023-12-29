@@ -6,7 +6,6 @@ interface Props {
 }
 
 export const InputTel: React.FC<Props> = ({ button }) => {
-
   const { formState, updateField } = useFormContext();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,6 +1,5 @@
-import { useContext } from "react";
-import { FormContext, FormContextProps } from ".";
-
+import { useContext } from 'react';
+import { FormContext, FormContextProps } from '.';
 
 export const useFormContext = (): FormContextProps => {
   const context = useContext(FormContext);

@@ -1,30 +1,55 @@
-# React + TypeScript + Vite
+# Formulario con React 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido al proyecto **form-securitas-direct**! Esta plantilla proporciona una configuración mínima para iniciar tu aplicación React con Vite.
 
-Currently, two official plugins are available:
+## 📚 Descripción del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este proyecto utiliza tecnologías modernas y buenas prácticas, incluyendo:
 
-## Expanding the ESLint configuration
+- **React:** Para construir interfaces de usuario dinámicas y reactivas.
+- **TypeScript:** Para tipado estático y una experiencia de desarrollo mejorada.
+- **Vite:** Como herramienta de construcción para un desarrollo rápido y eficiente.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🚀 Características Adicionales
 
-- Configure the top-level `parserOptions` property like this:
+- **Animaciones:** El proyecto incluye animaciones suaves para mejorar la experiencia del usuario.
+- **Formulario Multistep:** Implementa un formulario dividido en pasos para una navegación sencilla.
+- **Hooks Personalizados:** Se han utilizado hooks personalizados para una lógica de componente más modular.
+- **Hooks de React:** Además, se aprovechan los hooks proporcionados por React para una gestión de estado eficiente.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## 🚀 Inicio Rápido
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Sigue estos pasos sencillos para instalar y comenzar el proyecto:
+
+1. **Clonar el Repositorio:**
+   ```bash
+   git clone <url-del-repositorio>
+   cd form-securitas-direct
+   ```
+
+2. **Instalar Dependencias:**
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar el Servidor de Desarrollo:**
+   ```bash
+   npm run dev
+   ```
+
+   Esto iniciará el servidor de desarrollo, y podrás ver tu aplicación en `http://localhost:5173`.
+
+## 📁 Estructura del Proyecto
+
+La estructura del proyecto está diseñada para promover la escalabilidad, mantenibilidad y reutilización. Los directorios clave incluyen:
+
+- **src:** Contiene el código fuente de tu aplicación.
+- **components:** Alberga componentes reutilizables de React.
+- **sections:** Alberga las secciones del formulario de React.
+- **styles:** Gestiona hojas de estilo SASS.
+
+## 🛠️ Scripts de NPM
+
+- **npm run dev:** Inicia el servidor de desarrollo con HMR.
+- **npm run build:** Construye la aplicación lista para producción.
+- **npm run lint:** Linta el código usando ESLint.

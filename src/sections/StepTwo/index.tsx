@@ -122,7 +122,7 @@ export const StepTwo: React.FC<Props> = ({ onNext, miniStep }) => {
         <>
           {miniStepShow()}
 
-          <Information animationActive={animationActive}  />
+          <Information animationActive={animationActive} />
         </>
       )}
 
