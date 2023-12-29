@@ -20,13 +20,12 @@
       width: 32px;
       height: 32px;
       position: absolute;
-      animation: bulb-off 1s linear forwards;
     }
 
     &--bulb-on {
       width: 32px;
       height: 32px;
-      animation: bulb-on 1s linear forwards;
+      opacity: 0;
     }
   }
 
@@ -49,6 +48,14 @@
   animation: text 0.8s linear forwards;
 }
 
+.bold-off-active {
+  animation: bulb-off 1s linear forwards;
+}
+
+.bold-on-active {
+  animation: bulb-on 1s linear forwards;
+}
+
 @keyframes box-background {
   from {
     width: 48px;
@@ -69,9 +76,8 @@
     opacity: 0;
     z-index: -5;
     visibility: hidden;
-    
   }
-  
+
   99% {
     position: fixed;
     opacity: 0;
@@ -79,7 +85,7 @@
     height: 100%;
     visibility: visible;
   }
-  
+
   100% {
     opacity: 1;
     height: 100%;
