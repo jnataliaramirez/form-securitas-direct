@@ -1,10 +1,12 @@
 import './styles.scss';
 import bulb from '../../assets/bulb.svg';
 import bulbOn from '../../assets/bulb-on.svg';
-import { useState } from 'react';
 
-export const Information = () => {
-  const [animationActive, setAnimationActive] = useState(true);
+interface Props {
+  animationActive: boolean;
+}
+
+export const Information: React.FC<Props> = ({ animationActive }) => {
 
   return (
     <>

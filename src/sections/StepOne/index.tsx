@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Information } from '../../components/Information';
 import { RadioBox } from '../../components/RadioBox';
 import { Subtitle } from '../../components/Subtitle';
@@ -10,6 +11,20 @@ interface Props {
 
 export const StepOne: React.FC<Props> = ({ onNext, miniStep }) => {
   const { formState, updateField } = useFormContext();
+
+  const [animationActive, setAnimationActive] = useState<boolean>(false);
+
+  const [changeRadio, setChangeRadio] = useState<string>(formState.questionOne);
+
+  useEffect(() => {
+    setChangeRadio(formState.questionOne);
+  }, [formState.questionOne]);
+
+  useEffect(() => {
+    if (changeRadio) {
+      setAnimationActive(true);
+    }
+  }, [changeRadio]);
 
   const selectRadio = formState.questionOne;
   let optionShow;
@@ -32,7 +47,6 @@ export const StepOne: React.FC<Props> = ({ onNext, miniStep }) => {
 
   const handleInputChange = (name: string, value: string) => {
     updateField(name, value);
-    
     onNext?.();
   };
 
@@ -81,7 +95,7 @@ export const StepOne: React.FC<Props> = ({ onNext, miniStep }) => {
         )}
       </div>
 
-      <Information />
+      <Information animationActive={animationActive} />
     </fieldset>
   );
 };
